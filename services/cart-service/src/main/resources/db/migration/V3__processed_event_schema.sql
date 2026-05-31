@@ -1,0 +1,4 @@
+CREATE TABLE processed_event (
+    event_id VARCHAR(36) NOT NULL PRIMARY KEY,
+    processed_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

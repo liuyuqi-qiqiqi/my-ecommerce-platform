@@ -1,0 +1,20 @@
+---
+alwaysApply: true
+---
+
+<!-- SPECKIT START -->
+# Active Feature: 001-ecommerce-platform
+
+Read `specs/001-ecommerce-platform/plan.md` for architecture, tech stack, and project structure.
+
+Key references:
+- Spec: `specs/001-ecommerce-platform/spec.md`
+- Research: `specs/001-ecommerce-platform/research.md`
+- Data model: `specs/001-ecommerce-platform/data-model.md`
+- API contract: `specs/001-ecommerce-platform/contracts/shop-bff-api.yaml`
+- Events: `specs/001-ecommerce-platform/contracts/events.md`
+- Quickstart: `specs/001-ecommerce-platform/quickstart.md`
+- Constitution: `.specify/memory/constitution.md`
+
+Architecture: Vue 3 frontend → Spring Cloud Gateway → shop-bff → microservices (product, user, cart, order). MySQL per service, Elasticsearch for search, RabbitMQ Saga for checkout, Redis for JWT refresh and guest carts.
+<!-- SPECKIT END -->
