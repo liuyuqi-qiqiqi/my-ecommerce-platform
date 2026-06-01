@@ -57,7 +57,7 @@ async function addToCart() {
 </script>
 
 <template>
-  <AppLayout />
+  <AppLayout>
   <div class="page">
     <el-button link type="primary" @click="goBack">← 返回</el-button>
 
@@ -86,6 +86,7 @@ async function addToCart() {
       </div>
     </article>
   </div>
+</AppLayout>
 </template>
 
 <style scoped>

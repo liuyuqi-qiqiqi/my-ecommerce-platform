@@ -52,7 +52,7 @@ async function onSave() {
 </script>
 
 <template>
-  <AppLayout />
+  <AppLayout>
   <div class="page">
     <div class="card">
       <h1>个人资料</h1>
@@ -73,6 +73,7 @@ async function onSave() {
       </el-form>
     </div>
   </div>
+</AppLayout>
 </template>
 
 <style scoped>

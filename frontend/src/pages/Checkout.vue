@@ -87,7 +87,7 @@ async function onConfirmCheckout() {
 </script>
 
 <template>
-  <AppLayout />
+  <AppLayout>
   <div class="page">
     <h1>结算</h1>
 
@@ -156,6 +156,7 @@ async function onConfirmCheckout() {
       </div>
     </template>
   </div>
+  </AppLayout>
 </template>
 
 <style scoped>

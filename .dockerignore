@@ -1,5 +1,46 @@
-node_modules/
+# ── Git ────────────────────────────────────────────────────
 .git/
-target/
+.gitignore
+.gitattributes
+.github/
+
+# ── IDE ────────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+
+# ── Maven ──────────────────────────────────────────────────
+**/target/
 *.log
-.env*
+
+# ── Node ───────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.env.development
+frontend/.env.local
+
+# ── Environment (security) ─────────────────────────────────
+.env
+.env.local
+.env.production.local
+
+# ── OS ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Coverage & Test ────────────────────────────────────────
+**/jacoco.exec
+coverage/
+
+# ── Temp ───────────────────────────────────────────────────
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*~

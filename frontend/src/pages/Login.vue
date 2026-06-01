@@ -32,7 +32,7 @@ async function onSubmit() {
 </script>
 
 <template>
-  <AppLayout />
+  <AppLayout>
   <div class="page">
     <div class="card">
       <h1>登录</h1>
@@ -54,6 +54,7 @@ async function onSubmit() {
       </p>
     </div>
   </div>
+</AppLayout>
 </template>
 
 <style scoped>

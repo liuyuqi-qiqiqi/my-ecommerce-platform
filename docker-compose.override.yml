@@ -1,0 +1,39 @@
+# ============================================================
+# Local development overrides (auto-loaded by docker compose)
+# Skipped when: PRODUCTION=1 ./deploy.sh
+#
+# - Binds service ports on all interfaces (not 127.0.0.1 only)
+# - Use with root docker-compose.yml for full-stack local testing
+# Do NOT run alongside infra/docker-compose.yml (same container names)
+# ============================================================
+
+services:
+  mysql:
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+
+  redis:
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+
+  rabbitmq:
+    ports:
+      - "${RABBITMQ_AMQP_PORT:-5672}:5672"
+      - "${RABBITMQ_MGMT_PORT:-15672}:15672"
+
+  elasticsearch:
+    ports:
+      - "${ES_PORT:-9200}:9200"
+
+  nacos:
+    ports:
+      - "${NACOS_PORT:-8848}:8848"
+      - "${NACOS_GRPC_PORT:-9848}:9848"
+
+  zipkin:
+    ports:
+      - "${ZIPKIN_PORT:-9411}:9411"
+
+  gateway:
+    ports:
+      - "${GATEWAY_PORT:-8080}:8080"

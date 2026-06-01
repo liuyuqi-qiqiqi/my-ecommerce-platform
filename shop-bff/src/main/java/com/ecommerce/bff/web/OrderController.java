@@ -44,4 +44,10 @@ public class OrderController {
     public OrderDetailDto getOrder(@RequestHeader("X-User-Id") Long userId, @PathVariable Long orderId) {
         return orderServiceClient.getOrder(userId, orderId);
     }
+
+    @PostMapping("/{orderId}/cancel")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void cancelOrder(@RequestHeader("X-User-Id") Long userId, @PathVariable Long orderId) {
+        orderServiceClient.cancelOrder(userId, orderId);
+    }
 }

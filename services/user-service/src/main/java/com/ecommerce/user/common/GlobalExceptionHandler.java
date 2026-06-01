@@ -1,6 +1,7 @@
 package com.ecommerce.user.common;
 
 import com.ecommerce.user.exception.AccountLockedException;
+import com.ecommerce.user.exception.AddressNotFoundException;
 import com.ecommerce.user.exception.EmailAlreadyExistsException;
 import com.ecommerce.user.exception.InvalidCredentialsException;
 import com.ecommerce.user.exception.UserNotFoundException;

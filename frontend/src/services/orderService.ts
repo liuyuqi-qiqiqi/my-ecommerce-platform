@@ -115,6 +115,10 @@ export async function getOrder(orderId: number): Promise<OrderDetail> {
   return data;
 }
 
+export async function cancelOrder(orderId: number): Promise<void> {
+  await api.post(`/orders/${orderId}/cancel`);
+}
+
 export function getOrderErrorMessage(error: unknown): string {
   if (typeof error === 'object' && error !== null && 'response' in error) {
     const response = (error as { response?: { data?: { message?: string } } }).response;

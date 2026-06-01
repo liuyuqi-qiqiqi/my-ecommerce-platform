@@ -1,0 +1,39 @@
+# ============================================================
+# E-Commerce Platform - Windows Desktop Deployment
+# Only the frontend port is published to the host.
+# All other services communicate internally on the Docker network.
+#
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.win.yml up -d
+#
+# Note: This override REMOVES host port bindings for internal
+# services to avoid Docker Desktop "address already in use" errors
+# caused by TCP TIME_WAIT from rapid stop/start cycles.
+# ============================================================
+
+services:
+  # Infrastructure — internal network only
+  mysql:
+    ports: []
+
+  redis:
+    ports: []
+
+  rabbitmq:
+    ports: []
+
+  elasticsearch:
+    ports: []
+
+  nacos:
+    ports: []
+
+  zipkin:
+    ports: []
+
+  # Backend — internal network only
+  gateway:
+    ports: []
+
+  # Frontend — published on FRONTEND_PORT (no change from base)
+  # frontend inherits from docker-compose.yml (port ${FRONTEND_PORT:-80}:80)

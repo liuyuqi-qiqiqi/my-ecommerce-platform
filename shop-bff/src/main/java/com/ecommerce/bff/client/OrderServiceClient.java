@@ -25,4 +25,7 @@ public interface OrderServiceClient {
 
     @GetMapping("/{orderId}")
     OrderDetailDto getOrder(@RequestHeader("X-User-Id") Long userId, @PathVariable Long orderId);
+
+    @PostMapping("/{orderId}/cancel")
+    void cancelOrder(@RequestHeader("X-User-Id") Long userId, @PathVariable Long orderId);
 }

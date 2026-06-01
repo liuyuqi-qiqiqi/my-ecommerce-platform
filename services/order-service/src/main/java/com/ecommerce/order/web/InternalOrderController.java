@@ -3,6 +3,7 @@ package com.ecommerce.order.web;
 import com.ecommerce.order.dto.CheckoutRequest;
 import com.ecommerce.order.dto.OrderDetailDto;
 import com.ecommerce.order.dto.OrderPageDto;
+import com.ecommerce.order.service.CancelOrderService;
 import com.ecommerce.order.service.CheckoutService;
 import com.ecommerce.order.service.OrderQueryService;
 import jakarta.validation.Valid;
@@ -23,10 +24,15 @@ public class InternalOrderController {
 
     private final CheckoutService checkoutService;
     private final OrderQueryService orderQueryService;
+    private final CancelOrderService cancelOrderService;
 
-    public InternalOrderController(CheckoutService checkoutService, OrderQueryService orderQueryService) {
+    public InternalOrderController(
+            CheckoutService checkoutService,
+            OrderQueryService orderQueryService,
+            CancelOrderService cancelOrderService) {
         this.checkoutService = checkoutService;
         this.orderQueryService = orderQueryService;
+        this.cancelOrderService = cancelOrderService;
     }
 
     @PostMapping("/checkout")
@@ -46,5 +52,11 @@ public class InternalOrderController {
     @GetMapping("/{orderId}")
     public OrderDetailDto getOrder(@RequestHeader("X-User-Id") Long userId, @PathVariable Long orderId) {
         return orderQueryService.getOrder(userId, orderId);
+    }
+
+    @PostMapping("/{orderId}/cancel")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void cancelOrder(@RequestHeader("X-User-Id") Long userId, @PathVariable Long orderId) {
+        cancelOrderService.cancelOrder(userId, orderId);
     }
 }
